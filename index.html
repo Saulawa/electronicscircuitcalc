@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Electronics Circuit Calculator - Design & Calculate Electronic Circuits</title>
+  <meta name="description" content="Electronics Circuit Calculator is a comprehensive tool for professionals and hobbyists to design electronic circuits and perform calculations for resistors, capacitors, op-amps, filters, active filters, transistors, and more.">
+  <meta name="keywords" content="Electronics Circuit Calculator, electronic circuit design, resistor calculations, capacitor calculations, op-amp, filter, active filter, transistor calculations">
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="Electronics Circuit Calculator">
+  <meta property="og:description" content="Design and calculate electronic circuits with our comprehensive Electronics Circuit Calculator.">
+  <meta property="og:image" content="images/og-image.png"> <!-- Replace with your own image -->
+  <meta property="og:url" content="https://yourdomain.com/">
+  <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Optional external stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Global Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #0b2e13; /* Dark greenish background */
+      color: #e0e0e0; /* Light text color */
+    }
+    header {
+      background: linear-gradient(135deg, #022116, #015e29); /* Dark green gradient */
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Main Container with Three Columns */
+    .main-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 2rem;
+      gap: 1rem;
+    }
+    /* Left Column: App Description */
+    .description-panel {
+      flex: 1;
+      max-width: 700px;
+    }
+    .app-description {
+      background-color: #0a3132; /* A slightly lighter dark green */
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    
+    /* Center Column: Carousel */
+    .carousel-panel {
+      flex: 2;
+    }
+    .carousel-container {
+      max-width: 500px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(197, 230, 190, 0.2);
+      background: #86faba; /* Bright background for the carousel area */
+    }
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 700px;
+      object-fit: contain;
+      flex-shrink: 0;
+      background: rgb(1, 29, 16);
+      padding: 1rem;
+    }
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 1rem;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: background 0.3s;
+    }
+    .carousel-button:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+    .prev {
+      left: 0;
+      border-radius: 0 5px 5px 0;
+    }
+    .next {
+      right: 0;
+      border-radius: 5px 0 0 5px;
+    }
+    .dots-container {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #ddd;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .dot.active {
+      background: #2E8B57;
+    }
+    
+    /* Right Column: Store Badge Links */
+    .store-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .store-link {
+      text-decoration: none;
+    }
+    .store-link img {
+      max-width: 150px;
+      width: 100%;
+      height: auto;
+      margin: 10px 0;
+      transition: transform 0.3s ease;
+    }
+    .store-link img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .carousel-slide img {
+        height: 400px; /* Increased from 300px to 400px for a larger display on mobile */
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Electronics Circuit Calculator</h1>
+    <p>Your Ultimate Circuit Design Companion</p>
+  </header>
+  
+  <!-- Main Container with Description, Carousel, and Store Badge Links -->
+  <main class="main-container">
+    <!-- Center Column: Carousel -->
+    <div class="carousel-panel">
+      <div class="carousel-container">
+        <div class="carousel-slide">
+          <img src="images/1.png" alt="App Feature 1">
+          <img src="images/2.png" alt="App Feature 2">
+          <img src="images/3.png" alt="App Feature 3">
+          <img src="images/4.png" alt="App Feature 4">
+          <img src="images/5.png" alt="App Feature 5">
+          <img src="images/6.png" alt="App Feature 6">
+          <img src="images/7.png" alt="App Feature 7">
+          <img src="images/8.png" alt="App Feature 8">
+        </div>
+        <button class="carousel-button prev" aria-label="Previous Slide">❮</button>
+        <button class="carousel-button next" aria-label="Next Slide">❯</button>
+      </div>
+      <div class="dots-container"></div>
+    </div>
+    
+    <!-- Left Column: App Description -->
+    <section class="description-panel">
+      <div class="app-description">
+        <h2>About the App</h2>
+        <p>
+          The Electronics Circuit Calculator is a comprehensive tool designed for both professionals and hobbyists. It simplifies the process of designing electronic circuits and performing complex calculations. Whether you're calculating resistor values, selecting the right capacitor, configuring op-amps, designing filters (including active filters), or analyzing transistor parameters, this app provides the essential features to support your electronic design workflow.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Right Column: Store Badge Links -->
+    <aside class="store-panel">
+      <a href="https://apps.apple.com/us/app/calctronics-ee-tools-lite/id1583972990" class="store-link" target="_blank" rel="noopener">
+        <img src="images/ios.png" alt="Download on the App Store">
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.saulawa.anas.electronicstoolkit" class="store-link" target="_blank" rel="noopener">
+        <img src="images/playstore.png" alt="Get it on Google Play">
+      </a>
+      <a href="https://apps.microsoft.com/detail/9PG8BXCJWM2P?hl=en&gl=NG&ocid=pdpshare" class="store-link" target="_blank" rel="noopener">
+        <img src="images/windows.png" alt="Download on Windows">
+      </a>
+    </aside>
+  </main>
+  
+  <script>
+    const slide = document.querySelector('.carousel-slide');
+    const images = document.querySelectorAll('.carousel-slide img');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const dotsContainer = document.querySelector('.dots-container');
+
+    let counter = 0;
+    let size = images[0].clientWidth;
+
+    // Create dot navigation for each image
+    images.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+
+    function updateDots() {
+      document.querySelectorAll('.dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === counter);
+      });
+    }
+
+    function goToSlide(index) {
+      counter = index;
+      slide.style.transform = `translateX(${-size * counter}px)`;
+      updateDots();
+    }
+
+    nextButton.addEventListener('click', () => {
+      if (counter >= images.length - 1) return;
+      counter++;
+      slide.style.transform = `translateX(${-size * counter}px)`;
+      updateDots();
+    });
+
+    prevButton.addEventListener('click', () => {
+      if (counter <= 0) return;
+      counter--;
+      slide.style.transform = `translateX(${-size * counter}px)`;
+      updateDots();
+    });
+
+    // Auto-advance slides every 5 seconds
+    let autoSlide = setInterval(() => {
+      if (counter >= images.length - 1) counter = -1;
+      counter++;
+      slide.style.transform = `translateX(${-size * counter}px)`;
+      updateDots();
+    }, 5000);
+
+    // Pause auto-slide on user interaction and restart auto-advance
+    [prevButton, nextButton, dotsContainer].forEach(element => {
+      element.addEventListener('click', () => {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(() => {
+          if (counter >= images.length - 1) counter = -1;
+          counter++;
+          slide.style.transform = `translateX(${-size * counter}px)`;
+          updateDots();
+        }, 5000);
+      });
+    });
+
+    // Update slide width on window resize
+    window.addEventListener('resize', () => {
+      size = images[0].clientWidth;
+      slide.style.transition = 'none';
+      slide.style.transform = `translateX(${-size * counter}px)`;
+      setTimeout(() => slide.style.transition = 'transform 0.5s ease-in-out');
+    });
+  </script>
+</body>
+</html>
